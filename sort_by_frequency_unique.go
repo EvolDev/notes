@@ -13,7 +13,6 @@ import (
 // 2) при равной частоте — по значению по убыванию (value DESC).
 //
 // Пример: [1,1,2,2,2,3] -> [3,1,2]
-
 func SortByFrequencyUnique(nums []int) []int {
 	if len(nums) == 0 {
 		return []int{}
@@ -43,7 +42,6 @@ func SortByFrequencyUnique(nums []int) []int {
 	return sl
 }
 
-// -------------- мини-проверка --------------
 func mustEqual(got, want interface{}, msg string) {
 	if !reflect.DeepEqual(got, want) {
 		panic(fmt.Sprintf("%s: got=%v want=%v", msg, got, want))
@@ -69,7 +67,6 @@ func main() {
 		{[]int{1, 2, 3, 4}, []int{4, 3, 2, 1}},       // все по 1 -> по value DESC
 	}
 
-	// Раскомментируй после реализации:
 	for i, tc := range cases {
 		got := SortByFrequencyUnique(tc.in)
 		mustEqual(got, tc.want, fmt.Sprintf("FREQ-UNIQUE[%d]", i))
